@@ -71,7 +71,7 @@ const updatePayment = async (req, res, next) => {
   res.status(200).json({ payment: payment.toObject({ getters: true }) });
 };
 
-const getMetrics = (req, res, next) => {
+const getMetrics = async (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     res.status(405).json({ error: "Invalid inputs  " });
